@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,12 +28,10 @@ const Navigation = () => {
         isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <a href="#" className="font-heading font-semibold text-xl text-foreground flex items-center gap-2">
-            <div className="w-8 h-8 bg-foreground rounded-md flex items-center justify-center">
-              <div className="w-4 h-4 border-2 border-background"></div>
-            </div>
+            <img src={logo} alt="Mynul Islam" className="h-24 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
@@ -46,7 +45,10 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-foreground hover:bg-foreground/90 text-background text-sm px-6">
+            <Button 
+              onClick={() => window.location.href = 'mailto:mynulislamtanim@gmail.com?subject=Project%20Discussion%20Request&body=Hi%20Mynul,%0A%0AI%20would%20like%20to%20discuss%20a%20potential%20project%20with%20you.%0A%0AProject%20Type:%0ABudget%20Range:%0ATimeline:%0A%0ABest%20regards,'}
+              className="bg-foreground hover:bg-foreground/90 text-background text-sm px-6"
+            >
               Book a Call →
             </Button>
           </div>

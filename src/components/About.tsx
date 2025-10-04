@@ -2,12 +2,12 @@ import mynulPhoto from "@/assets/mynul.jpg";
 
 const About = () => {
   const specialties = [
-    "Full-Stack Development",
-    "UX/UI Design",
-    "Branding & Identity",
-    "Mobile App Design",
-    "Web Development",
-    "Design Systems",
+    "Frontend Development",
+    "Backend Development",
+    "Mobile App Development",
+    "AI & Machine Learning",
+    "Blockchain Technology",
+    "UI/UX Design",
   ];
 
   return (
@@ -19,42 +19,48 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
           {/* Left side - Large stat */}
-          <div className="space-y-8">
-            <div className="bg-muted rounded-lg p-8">
-              <div className="text-6xl font-light mb-4">120%</div>
-              <p className="text-foreground/70">
-                Average increase in client engagement and conversion rates
-              </p>
-            </div>
-          </div>
-
-          {/* Right side - Photo and content */}
-          <div className="space-y-8">
-            <div className="aspect-square w-48 overflow-hidden rounded-lg">
-              <img
-                src={mynulPhoto}
-                alt="Mynul"
-                className="w-full h-full object-cover grayscale"
-              />
+            <div className="space-y-8">
+              <div className="bg-muted rounded-lg p-8">
+                <div className="text-6xl font-light mb-4">3.51</div>
+                <p className="text-foreground/70">
+                  CGPA in B.Sc. in Computer Science and Engineering from Daffodil International University
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-foreground flex-shrink-0 mt-1"></div>
-                <div>
-                  <p className="text-foreground leading-relaxed">
-                    As one of America's foremost UI designers and a full-stack developer, I've delivered designs that drive measurable results for startups and established brands alike.
-                  </p>
-                </div>
+            {/* Right side - Photo and content */}
+            <div className="space-y-8">
+              <div className="aspect-square w-48 overflow-hidden rounded-lg">
+                <img
+                  src={mynulPhoto}
+                  alt="Md. Mynul Islam"
+                  className="w-full h-full object-cover grayscale"
+                />
               </div>
 
-              <div className="flex items-start gap-3">
+              <div className="space-y-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-foreground flex-shrink-0 mt-1"></div>
+                  <div>
+                    <p className="text-foreground leading-relaxed">
+                      A versatile software developer with expertise in web development, mobile applications (Flutter), AI, Machine Learning, and Blockchain technologies. As the CEO of Blend and Bite Foodcart and Co-founder of GooseUp, I've demonstrated leadership in both technical development and business operations.
+                    </p>
+                  </div>
+                </div>              <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-foreground flex-shrink-0 mt-1"></div>
                 <div>
                   <p className="text-foreground leading-relaxed">
                     Proven track record in creating web platforms, designing mobile apps, and building design systems that scale thoughtfully-researched design strategies.
                   </p>
                 </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                {specialties.map((specialty, index) => (
+                  <div key={index} className="bg-muted rounded-md p-3 text-sm">
+                    {specialty}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

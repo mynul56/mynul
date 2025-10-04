@@ -1,4 +1,5 @@
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const navLinks = [
@@ -10,9 +11,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Twitter, href: "#" },
+    { icon: Github, href: "https://github.com/mynul56" },
+    { icon: Linkedin, href: "https://bd.linkedin.com/in/mynulislam56" },
+    { icon: Mail, href: "mailto:mynulislamtanim@gmail.com" },
   ];
 
   return (
@@ -22,17 +23,23 @@ const Footer = () => {
           {/* Left side */}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 bg-background rounded-md flex items-center justify-center">
-                <div className="w-4 h-4 border-2 border-foreground"></div>
-              </div>
+              <img src={logo} alt="Mynul Islam" className="h-24 w-auto brightness-0 invert" />
             </div>
             
-            <a
-              href="mailto:hello@mynul.dev"
-              className="text-2xl md:text-3xl hover:text-background/70 transition-colors"
-            >
-              hello@dnova.com
-            </a>
+            <div className="space-y-4">
+              <a
+                href="mailto:mynulislamtanim@gmail.com"
+                className="text-xl md:text-2xl hover:text-background/70 transition-colors block"
+              >
+                mynulislamtanim@gmail.com
+              </a>
+              <p className="text-background/70">
+                Uttara Sector 12, Dhaka, Bangladesh
+              </p>
+              <p className="text-background/70">
+                +880 173-596-8803
+              </p>
+            </div>
           </div>
 
           {/* Right side */}
@@ -60,12 +67,14 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={social.href}
-                      className="text-sm text-background/70 hover:text-background transition-colors flex items-center gap-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-background/70 hover:text-background transition-all flex items-center gap-2 group hover:translate-x-1"
                     >
-                      <social.icon size={16} />
+                      <social.icon size={16} className="group-hover:scale-110 transition-transform" />
                       {social.icon === Github && "Github"}
                       {social.icon === Linkedin && "LinkedIn"}
-                      {social.icon === Twitter && "Twitter"}
+                      {social.icon === Mail && "Email Me"}
                     </a>
                   </li>
                 ))}

@@ -6,19 +6,22 @@ import project3 from "@/assets/project3.jpg";
 const Projects = () => {
   const projects = [
     {
-      title: "Halo Digital Agency",
+      title: "Portfolio Website",
       image: project1,
-      category: "Web Design",
+      category: "Web Development",
+      link: "https://mynul56.github.io/mynulportfolio/",
     },
     {
-      title: "ShopFlow E-commerce",
+      title: "Smart Home UI",
       image: project2,
-      category: "Full-Stack",
+      category: "Flutter Development",
+      link: "https://github.com/mynul56/flutter_smart_home_ui",
     },
     {
-      title: "FinTrack Mobile App",
+      title: "Next.js Matrimony Website",
       image: project3,
-      category: "UX/UI",
+      category: "Full-Stack Development",
+      link: "https://github.com/mynul56",
     },
   ];
 
@@ -27,9 +30,12 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="group cursor-pointer"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group cursor-pointer block transition-transform hover:-translate-y-1"
             >
               <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4 bg-card">
                 <img
@@ -45,7 +51,7 @@ const Projects = () => {
                 </div>
                 <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all" />
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
